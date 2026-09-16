@@ -47,10 +47,7 @@ This skill records a session of itself testing UI behavior, then posts the resul
 >- The raw capture is MPEG-TS, so even a crashed or killed recording session will still yield usable evidence
 >- The headless path needs only a running app and a scriptable browser (Playwright via `npx`)
 >- Posting evidence requres the `gh` CLI (or relevant equivelent)
->- `tests/test_evidence.py` smoke-tests the recorder end-to-end with a synthetic video source:
-```bash
-python3 -m pytest tests/ -q
-```
+>- `tests/test_evidence.py` smoke-tests the recorder end-to-end with a synthetic video source: `python3 -m pytest tests/ -q`
 
 ### /before-and-after
 **/before-and-after** creates the screenshots and turns the outputs into a PR-ready markdown table. It drives the `@vercel/before-and-after` CLI.
@@ -71,7 +68,7 @@ Use **/before-and-after** when:
 
 Use **/greploop** to present a clean PR for Greptile to review before merging.
 
->Important Note(s):
+#### Important Note(s):
 >- Vendored from [greptileai/skills](https://github.com/greptileai/skills) (MIT, license included in folder)
 >- Requires Greptile installed on repo and any authenticated version control (`gh`, `glab`, `p4`) CLI
 
