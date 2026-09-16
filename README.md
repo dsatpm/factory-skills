@@ -141,6 +141,6 @@ Claude Code will automatically detect the skill and invoke it when **any** task 
 ## Want to add a new skill?
 
 1. Create a folder named after the skill in *kebab-case*
-2. Create a **SKILL.md** file with **name** and **description** front-matter. The description is what Claude uses to decide when the skill applies. That can be set using a **trigger-focused** setting ("Use when...")
+2. Create a **SKILL.md** file with **name** and **description** frontmatter. The description is what Claude uses to decide when the skill applies. That can be set using a **trigger-focused** setting ("Use when...")
 3. Keep instructions *concise* and *actionable*. Good rule-of-thumb is to keep the skill **~ 120 - 150 lines** long. Anything under and you probably aren't being descriptive enough. Anything over and you probably have a bunch of filler and should consider editing it down or linking out to reference files in the folder.
 
