@@ -38,7 +38,7 @@ This skill records a session of itself testing UI behavior, then posts the resul
 #### For headless environments 
 **Playwright** is used instead of the programmed recorder, and all subsequent UI changes observed during test session still get evidence reports.
 
->Important Note(s):
+#### Important Note(s):
 >- The recorder requires *ffmpeg / ffprobe* built with *libx264* and the *ass filter*, *screen-capture source*:
 >  - X11 (*DISPLAY*) or wlroots Wayland (*wf-recorder*; *GNOME/KDE* are **not** supported) on Linux
 >  - Screen Recording permission on macOS
@@ -60,7 +60,7 @@ Use **/before-and-after** when:
   - You want a `| Before | After |` generated and uploaded in one step
   - you're comparing two URLs, two images, a combination of both, or something else
 
->Important Note(s):
+#### Important Note(s):
 >- This skill was vendored from [vercel-labs/before-and-after](https://github.com/vercel-labs/before-and-after) (PolyForm Shield 1.0.0, license included in the folder)
 >- Install the CLI using `npm i -g @vercel/before-and-after agent-browser` 
 
@@ -80,7 +80,7 @@ Use **/greploop** to present a clean PR for Greptile to review before merging.
 
 Use **/greploop-apps** when **/greploop**'s trigger gets *'Too many changes to review'*
 
->Important Note(s):
+#### Important Note(s):
 >- Local variant derived from **greptileai's** `greploop` (MIT, license included in the folder); no separate upstream required.
 
 ### /no-slop
@@ -119,8 +119,8 @@ Use **/no-slop** when:
     - chat replies
   - Cleaning up existing text that sounds 'too robotic'
 
->Important Note(s):
-- Vendored from [cursor/plugins(pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) (MIT, license included in the folder)
+#### Important Note(s):
+>- Vendored from [cursor/plugins(pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) (MIT, license included in the folder)
 >- The body matches upstream; the front-matter has two edits so agents apply the skill on their own instead of waiting for a typed **/no-slop**
 >- **disable-model-invocation: true** has been dropped, and the description now names the trigger (test you write or edit for a human reader) in place of upstream's **any writing. Must always apply**, > so auto-invocation matches the scope **AGENTS.md** gives it.
 >- Restore the flag if you want `slash-command-only` behavior 
