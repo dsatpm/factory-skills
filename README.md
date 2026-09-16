@@ -7,7 +7,8 @@ A specialized list of [agentic skills](https://platform.claude.com/docs/en/agent
 
 Agents.md uses a *four-step workflow*:
 ```
-delegate(/feature) -> develop(/build) -> discuss(/test-with-evidence) -> deploy(/before-and-after, /greploop)
+delegate(/feature) -> develop(/build) -> 
+discuss(/test-with-evidence) -> deploy(/before-and-after, /greploop)
 ```
 There have been a few additional **/skills** added to the background to make sure the AI is behaving as expected (not hallucinating as much, not producing as much generic slop, etc.). **/no-slop** can be dropped into any repo alongside this skill factory - you just fill in *your* repo specific configurations (environment variables, checks, guardrails)
 
