@@ -14,12 +14,12 @@ There have been a few additional `/skills` added to the background to make sure 
 
 ## List of skills
 
-### /feature (new feature)
+### /feature
 `/feature` is the workhorse of the factory. 
 
 This skill begins the workflow by first assigning a fresh Git branch off of `origin/main` to multiple agents that can then work concurrently without stepping on eachothers' workflows. Behind-the-scenes it takes care of task naming, scope checking against open PRs, dependency installs, and branch cleanup steps post-merge.
 
-### /build (code structure)
+### /build
 `/build` is a guidance skill that works from the service layer of the application's architecture. It will be busy enforcing a `two-layer separation` where `actions > domain rules` and a service layer is needed to centralize and keep tabs on how the operational mechanics are being used.
 
   Use `/build` when:
@@ -30,7 +30,7 @@ This skill begins the workflow by first assigning a fresh Git branch off of `ori
 
 Also included is a migration checklist for how the agent should extract shared logic safely as well as a list of **anti-patterns** to avoid (`leaky data`, `over-abstraction`).
 
-### /test-with-evidence (evidence driven testing)
+### /test-with-evidence
 `/test-with-evidence` is, in my opinion, an extremely undervalued skill. 
 
 This skill records a session of itself testing UI behavior, then posts the result with a summary to a PR and issue tracker. The recorder is programmed to run on `Linux`, `macOS`, and `Windows` and has several sub-commands baked in (`doctor`, `start`, `stop`, and `annotate`). Each new annotation taken during the recording session is timestamped and burned into `results.mp4` when stopped and writes the report to `report.md` and `manifest.json`. 
@@ -79,7 +79,7 @@ Use `/greploop-apps` when `/greploop`'s trigger gets 'Too many changes to review
 >[!Info] Important Note(s):
 > - Local variant derived from `greptileai`'s `greploop` (MIT, license included in the folder); no separate upstream required.
 
-### /no-slop (unslop)
+### /no-slop
 `/un-slop` is so cool. It tells AI to edit its output to remove prose and put a human voice back in. 
 
 It names `31 patterns` to catch:
