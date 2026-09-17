@@ -1,12 +1,12 @@
 ---
-name: feature
-description: Start a new task in an isolated Git worktree branched from origin/main so multiple agents can work on the same repo in parallel without conflicts. Use at the beginning of every new feature, fix, or task — before writing any code.
+name: new-feature
+description: Start a new task in an isolated Git worktree branched from origin/master so multiple agents can work on the same repo in parallel without conflicts. Use at the beginning of every new feature, fix, or task — before writing any code.
 ---
 
-# Feature
+# New Feature
 
 Every task gets its own worktree and branch, created from the latest
-`origin/main`. Never build on `main`, and never reuse another agent's
+`origin/master`. Never build on `master`, and never reuse another agent's
 worktree or branch.
 
 ## Harness deltas — read first
@@ -37,7 +37,7 @@ worktree or branch.
 
    ```bash
    git worktree add <worktrees-dir>/<task-name> \
-     -b <branch-prefix>/<task-name> origin/main
+     -b <branch-prefix>/<task-name> origin/master
    ```
 
    Use a **gitignored** directory for worktrees (e.g. `.claude/worktrees/`
@@ -49,7 +49,7 @@ worktree or branch.
 
    ```bash
    cd <worktrees-dir>/<task-name>
-   git branch --show-current   # must print your new branch, not main
+   git branch --show-current   # must print your new branch, not master
    ```
 
    Then install dependencies fresh inside the worktree (worktrees don't

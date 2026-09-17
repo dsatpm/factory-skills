@@ -15,8 +15,8 @@
       }
     },
     {
-      "name": "build",
-      "source": "./plugins/build",
+      "name": "code-builder",
+      "source": "./plugins/code-builder",
       "description": "When multiple workflows duplicate the same operational logic, this plugin helps to centralize and manage the shared build steps.",
       "version": "1.0.0",
       "author": {
@@ -24,9 +24,9 @@
       }
     },
     {
-      "name": "feature",
-      "source": "./plugins/feature",
-      "description": "Start a new task in an isolated Git worktree branched from origin/main.",
+      "name": "new-feature",
+      "source": "./plugins/new-feature",
+      "description": "Start a new task in an isolated Git worktree branched from origin/master.",
       "version": "1.0.0",
       "author": {
         "name": "HTPdevs"

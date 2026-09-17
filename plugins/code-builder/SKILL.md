@@ -1,5 +1,5 @@
 ---
-name: build
+name: code-builder
 description: Use when multiple workflows duplicate the same operational logic, when deciding what belongs in actions vs shared services, or when refactoring repeated operational blocks across domain flows. Use when adding new features that share mechanics with existing ones.
 ---
 
