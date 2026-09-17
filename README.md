@@ -82,7 +82,7 @@ Use **/greploop-apps** when **/greploop**'s trigger gets *'Too many changes to r
 >- Local variant derived from **greptileai's** `greploop` (MIT, license included in the folder); no separate upstream required.
 
 ### /no-slop
-**/un-slop** is so cool. It tells AI to edit its output to remove prose and put a human voice back in. 
+**/no-slop** is so cool. It tells AI to edit its output to remove prose and put a human voice back in. 
 
 It names **31 patterns** to catch:
   ```yaml
