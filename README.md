@@ -7,7 +7,7 @@ A specialized list of [agentic skills](https://platform.claude.com/docs/en/agent
 
 Agents.md uses a *four-step workflow*:
 ```
-delegate(/feature) -> develop(/build) -> 
+delegate(/new-feature) -> develop(/code-builder) -> 
 discuss(/test-with-evidence) -> deploy(/before-and-after, /greploop)
 ```
 There have been a few additional **/skills** added to the background to make sure the AI is behaving as expected (not hallucinating as much, not producing as much generic slop, etc.). **/no-slop** can be dropped into any repo alongside this skill factory - you just fill in *your* repo specific configurations (environment variables, checks, guardrails)
@@ -15,15 +15,15 @@ There have been a few additional **/skills** added to the background to make sur
 
 ## List of skills
 
-### /feature
-**/feature** is the workhorse of the factory. 
+### /new-feature
+**/new-feature** is the workhorse of the factory. 
 
-This skill begins the workflow by first assigning a fresh Git branch off of **origin/main** to multiple agents that can then work concurrently without stepping on eachothers' workflows. Behind-the-scenes it takes care of task naming, scope checking against open PRs, dependency installs, and branch cleanup steps post-merge.
+This skill begins the workflow by first assigning a fresh Git branch off of **origin/master** to multiple agents that can then work concurrently without stepping on eachothers' workflows. Behind-the-scenes it takes care of task naming, scope checking against open PRs, dependency installs, and branch cleanup steps post-merge.
 
-### /build
-**/build** is a guidance skill that works from the service layer of the application's architecture. It will be busy enforcing a **two-layer separation** where **actions > domain rules** and a service layer is needed to centralize and keep tabs on how the operational mechanics are being used.
+### /code-builder
+**/code-builder** is a guidance skill that works from the service layer of the application's architecture. It will be busy enforcing a **two-layer separation** where **actions > domain rules** and a service layer is needed to centralize and keep tabs on how the operational mechanics are being used.
 
-  Use **/build** when:
+  Use **/code-builder** when:
     - Several agents are duplicating similar or identical operational logic during independent workflows
     - Deciding what is a shared service vs. an action
     - Bug fixes that happen in *one flow* does not propogate to other agents doing the same thing
@@ -84,28 +84,23 @@ Use **/greploop-apps** when **/greploop**'s trigger gets *'Too many changes to r
 ### /no-slop
 **/no-slop** is so cool. It tells AI to edit its output to remove prose and put a human voice back in. 
 
-It names **31 patterns** to catch:
-  ```yaml
-  patterns_to_avoid:
-    - puffery
-    - filler
-    - hedging
-    - chatbot_phrases
-    - em_dashes
-    - colons_as_connectors
-    - bold_and_emoji_overuse
-    - abstract_metaphor_nouns
-    - passive_voice
-  ```
+It names **31 patterns** to catch, such as:
+  - puffery
+  - filler
+  - hedging
+  - chatbot phrases
+  - em dashes
+  - colons as connectors
+  - bold and emoji_overuse
+  - abstract metaphor nouns
+  - passive voice
 
 and a short checklist for adding opinion and rhythm, applied as a four-step loop:
-  ```yaml
-  opinion_and_rhythm:
-  - scan
-  - rewrite
-  - add_soul
-  - self_audit
-  ```
+  1. scan
+  2. rewrite
+  3. add soul
+  4. self audit
+
 
 Use **/no-slop** when:
   - You are writing content that you are confident a person will read:
@@ -126,16 +121,43 @@ Use **/no-slop** when:
 
 ## How to install
 
-Clone the repo and copy or *symlink* a skill folder into your **skills** directory:
+### Claude Code
+**From the app:**
+  - Go to `Customize`
+  - Click `Plugins` tab and click `Add` dropdown
+  - Select `Add marketplace` and choose *Add from a repository*
+  - Copy the repo below:
+  ```bash
+  git@github.com:dsatpm/factory-skills.git
+  ```
+
+**From CLI:**
+```bash
+# Register the marketplace (owner/repo, https://, SSH URL, or ./path all work)
+claude plugin marketplace add dsatpm/factory-skills
+
+# Then install the plugins you want
+claude plugin install new-feature@factory-skills
+claude plugin install code-builder@factory-skills
+claude plugin install test-with-evidence@factory-skills
+claude plugin install before-and-after@factory-skills
+claude plugin install greploop@factory-skills
+claude plugin install greploop-apps@factory-skills
+claude plugin install no-slop@factory-skills
+```
+Inside a running session the same thing works as `/plugin marketplace add dsatpm/factory-skills` followed by `/plugin install <name>@factory-skills`.
+
+### GitHub
+Clone the repo and copy or *symlink* a skill folder from `plugins/` into your **skills** directory:
 ```bash
 # Install specific skill globally
-cp -r build ~/.claude/skills/
+cp -r plugins/no-slop ~/.claude/skills/
 
 # Or scope a skill to a single project
-cp -r build /path/to/project/.claude/skills/
+cp -r plugins/no-slop /path/to/project/.claude/skills/
 ```
 
-Claude Code will automatically detect the skill and invoke it when **any** task matches the skill's description. You can also invoke a skill through Claude Code explicitly with **/build** or **/test-with-evidence**.
+Claude Code will automatically detect the skill and invoke it when **any** task matches the skill's description. You can also invoke a skill through Claude Code explicitly with **/code-builder** or **/test-with-evidence**.
 
 
 ## Want to add a new skill?
