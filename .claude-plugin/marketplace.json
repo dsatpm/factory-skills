@@ -1,0 +1,72 @@
+{
+  "name": "factory-skills",
+  "owner": {
+    "name": "HTPdevs",
+    "email": "info@htpdevs.tech"
+  },
+  "plugins": [
+    {
+      "name": "before-and-after",
+      "source": "./plugins/before-and-after",
+      "description": "Captures before/after screenshots of web pages or elements for visual comparison.",
+      "version": "1.0.0",
+      "author": {
+        "name": "HTPdevs"
+      }
+    },
+    {
+      "name": "build",
+      "source": "./plugins/build",
+      "description": "When multiple workflows duplicate the same operational logic, this plugin helps to centralize and manage the shared build steps.",
+      "version": "1.0.0",
+      "author": {
+        "name": "HTPdevs"
+      }
+    },
+    {
+      "name": "feature",
+      "source": "./plugins/feature",
+      "description": "Start a new task in an isolated Git worktree branched from origin/main.",
+      "version": "1.0.0",
+      "author": {
+        "name": "HTPdevs"
+      }
+    },
+    {
+      "name": "greploop",
+      "source": "./plugins/greploop",
+      "description": "Iteratively fix a PR/MR/CL until Greptile gives a perfect review: 5/5 confidence, zero unresolved comments.",
+      "version": "1.3",
+      "author": {
+        "name": "greptileai"
+      }
+    },
+    {
+      "name": "greploop-apps",
+      "source": "./plugins/greploop-apps",
+      "description": "Iteratively fix a PR/MR/CL until Greptile gives a perfect review: 5/5 confidence, zero unresolved comments.",
+      "version": "1.3",
+      "author": {
+        "name": "greptileai"
+      }
+    },
+    {
+      "name": "no-slop",
+      "source": "./plugins/no-slop",
+      "description": "Cut AI tells from text you write or edit for a human reader (commit messages, PR titles and bodies, docs, code comments, replies).",
+      "version": "1.0.0",
+      "author": {
+        "name": "HTPdevs"
+      }
+    },
+    {
+      "name": "test-with-evidence",
+      "source": "./plugins/test-with-evidence",
+      "description": "Records visual proof while testing UI behavior.",
+      "version": "1.2",
+      "author": {
+        "name": "HTPdevs"
+      }
+    }
+  ]
+}

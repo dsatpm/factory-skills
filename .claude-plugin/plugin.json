@@ -1,0 +1,44 @@
+[
+  {
+    "name": "before-and-after-plugin",
+    "description": "A plugin that shows before and after comparisons.",
+    "version": "1.0.0",
+    "author": "michaelshimeles"
+  },
+  {
+    "name": "build-plugin",
+    "description": "Use when adding new features that share mechanics with existing ones.",
+    "version": "1.0.0",
+    "author": "michaelshimeles"
+  },
+  {
+    "name": "feature-plugin",
+    "description": "Start a new task in an isolated Git worktree branched from origin/main",
+    "version": "1.0.0",
+    "author": "michaelshimeles"
+  },
+  {
+    "name": "greploop-apps-plugin",
+    "description": "Iteratively fix a PR/MR/CL until Greptile gives a perfect review",
+    "version": "1.3",
+    "author": "greptileai"
+  },
+  {
+    "name": "greploop-plugin",
+    "description": "Iteratively fix a PR/MR/CL until Greptile gives a perfect review",
+    "version": "1.3",
+    "author": "greptileai"
+  },
+  {
+    "name": "no-slop-plugin",
+    "description": "Cut AI patterns and add human voice.",
+    "version": "1.0.0",
+    "author": "michaelshimeles"
+  },
+  {
+    "name": "test-with-evidence-plugin",
+    "description": "Record annotated proof of behavior, then attach it to the PR and tracker issue.",
+    "version": "1.2",
+    "author": "michaelshimeles"
+  }
+]
